@@ -10,6 +10,7 @@ app.use(cors());
 app.use(bodyParser.json())
 app.use((request,reponse,next) => {
     console.log(request.url);
+    next();
 } )
 
 app.get("/trees", async (request,response) => {
