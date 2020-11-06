@@ -3,10 +3,6 @@ import cors from "cors";
 import axios from 'axios';
 import bodyParser from "body-parser";
 import { getCollectionDocuments, createCollectionDocument, deleteCollectionDocument } from "./database.js";
-import dotenv from "dotenv";
-
-dotenv.config()
-
 
 const app = express();
 
@@ -27,10 +23,6 @@ app.get("/trees", async (request,response) => {
         response.status(503);
         response.send("No Trees Found");        
     }
-})
-
-app.get("/test", async (request,response) => {
-    response.send(`${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}`);        
 })
 
 app.get("/trees/:treeName", async (request,response) => {
