@@ -63,6 +63,6 @@ app.get("/kanye", (request,response) => {
     .then(r => response.send(r.data.quote))
 })
 
-app.listen(8080);
+listen(process.env.PORT || 8080)
 
 
